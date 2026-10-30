@@ -1,79 +1,18 @@
-import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation, Navigate, Outlet, useParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Systems from './pages/Systems';
-import Security from './pages/Security';
-import Contact from './pages/Contact';
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
-  return null;
-};
-
-// Syncs URL param :lang with i18n
-const LanguageHandler = () => {
-  const { lang } = useParams();
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    if (lang && ['pt', 'en', 'es'].includes(lang)) {
-       // Defensive check: ensure i18n is initialized and has changeLanguage method
-       if (i18n && typeof i18n.changeLanguage === 'function') {
-         if (i18n.language !== lang) {
-           i18n.changeLanguage(lang);
-         }
-       }
-    }
-  }, [lang, i18n]);
-
-  return <Outlet />;
-};
-
-// Redirects root "/" to the detected language or default
-const RootRedirect = () => {
-  const { i18n } = useTranslation();
-  
-  // Determine best language from i18n state (which includes detection)
-  let targetLang = 'pt';
-  if (i18n && i18n.language) {
-    if (i18n.language.startsWith('en')) targetLang = 'en';
-    else if (i18n.language.startsWith('es')) targetLang = 'es';
-    else if (i18n.language.startsWith('pt')) targetLang = 'pt';
-  }
-
-  return <Navigate to={`/${targetLang}`} replace />;
-};
-
-const App: React.FC = () => {
-  return (
-    <HashRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<RootRedirect />} />
-        
-        <Route path="/:lang" element={<LanguageHandler />}>
-          <Route element={<Layout><Outlet /></Layout>}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="systems" element={<Systems />} />
-            <Route path="security" element={<Security />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Route>
-
-        {/* Catch-all for unknown routes -> redirect to default home */}
-        <Route path="*" element={<Navigate to="/pt" replace />} />
-      </Routes>
-    </HashRouter>
-  );
-};
-
-export default App;
+import React, { useEffect, useState } from 'react';
+import { ArrowUpRight, ArrowDown, Menu, X, Layers, Mail } from 'lucide-react';
+import { products } from './site-content';
+import './index.css';
+export default function App() {
+ const [open,setOpen]=useState(false);
+ const [subject,setSubject]=useState('Consultoria integrada');
+ useEffect(()=>{const old=location.hash.match(/^#\/(pt|en|es)(?:\/([^/]+))?\/?$/);if(old){const routes:Record<string,string>={about:'sobre',systems:'portfolio',security:'estrutura',contact:'contato'};const id=routes[old[2]]||'inicio';history.replaceState(null,'',`#${id}`);requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView());}},[]);
+ const email=`mailto:contato@biosintese.com.br?subject=${encodeURIComponent(`Contato pelo site — ${subject}`)}`;
+ return <><a className="skip" href="#conteudo">Pular para o conteúdo</a><header><a className="brand" href="#inicio"><b className="mark">B</b><span>BIO SÍNTESE<small>CONSULTORIA INTEGRADA</small></span></a><button className="menu" aria-label={open?'Fechar menu':'Abrir menu'} aria-expanded={open} aria-controls="nav" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav id="nav" className={open?'open':''} aria-label="Navegação principal">{[['sobre','A BIO SÍNTESE'],['portfolio','Portfólio'],['estrutura','Como nos organizamos'],['contato','Vamos conversar ↗']].map(([id,label])=><a href={`#${id}`} key={id} onClick={()=>setOpen(false)}>{label}</a>)}</nav></header>
+ <main id="conteudo"><section id="inicio" className="hero wrap"><div><p className="eyebrow">● Ciência, tecnologia e consultoria</p><h1>Uma empresa.<br/>Múltiplas <em>soluções.</em></h1><p className="lead">A BIO SÍNTESE CONSULTORIA INTEGRADA reúne produtos e soluções em uma estrutura empresarial compartilhada.</p><div className="actions"><a className="button" href="#portfolio">Conheça o portfólio <ArrowUpRight size={18}/></a><a href="#sobre">Conheça a BIO →</a></div><div className="hero-bottom"><span>Identidades próprias.<br/>Uma base em comum.</span><a href="#sobre" aria-label="Explorar a BIO SÍNTESE"><ArrowDown/></a></div></div><div className="diagram" aria-label="BIO SÍNTESE reúne TROPA DO RUSH, SIGCR e SETOR SEIS"><div className="orbit"/><div className="orbit outer"/><div className="core"><Layers/><strong>BIO SÍNTESE</strong><small>CONSULTORIA INTEGRADA</small></div>{products.map((p,i)=><div className={`satellite s${i}`} key={p.id}>{p.name}<small>0{i+1} / PORTFÓLIO</small></div>)}<p>CONEXÕES QUE DÃO FORMA A SOLUÇÕES</p></div></section>
+ <div className="strip"><div className="wrap"><span>PORTFÓLIO BIO SÍNTESE</span>{products.map(p=><a href={`#${p.id}`} key={p.id}>{p.name}</a>)}</div></div>
+ <section id="sobre" className="wrap section about"><p className="eyebrow">01 / A empresa</p><div><h2>Uma base integrada.<br/><span>Espaço para cada identidade.</span></h2><p>A BIO SÍNTESE é a empresa central de um portfólio que reúne TROPA DO RUSH, SIGCR e SETOR SEIS. Cada produto mantém seu nome e sua identidade, com vínculo institucional à consultoria.</p><p>Essa organização conecta a comunicação, a gestão e a apresentação das soluções sob uma mesma marca empresarial: BIO SÍNTESE CONSULTORIA INTEGRADA.</p></div></section>
+ <section id="portfolio" className="section portfolio"><div className="wrap"><div className="heading"><div><p className="eyebrow">02 / Nosso portfólio</p><h2>Três identidades.<br/><span>Uma BIO SÍNTESE.</span></h2></div><p>Conheça os produtos e marcas que fazem parte da nossa estrutura.</p></div><div className="products">{products.map((p,i)=><article id={p.id} key={p.id}><div className="card-top"><span>{p.category}</span><span>0{i+1}</span></div><h3>{p.name}</h3><p>{p.description}</p><a href={`mailto:contato@biosintese.com.br?subject=${encodeURIComponent(`Quero conhecer ${p.name}`)}`}>Fale sobre {p.name}<ArrowUpRight size={17}/></a><small>Uma solução BIO SÍNTESE</small></article>)}</div></div></section>
+ <section id="estrutura" className="section wrap"><p className="eyebrow">03 / Nossa organização</p><h2>Integração no centro.<br/><span>Identidade em cada solução.</span></h2><div className="principles">{[['Empresa central','A BIO SÍNTESE é a referência institucional do portfólio, reunindo a apresentação empresarial das soluções.'],['Produtos com identidade','TROPA DO RUSH, SIGCR e SETOR SEIS mantêm nomes próprios e uma relação clara com a consultoria.'],['Diálogo direto','Um canal institucional para conhecer as soluções, conversar sobre projetos e iniciar novas conexões.']].map(([title,text],i)=><article key={title}><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+ <section id="contato" className="section contact"><div className="wrap contact-grid"><div><p className="eyebrow">04 / Vamos conversar</p><h2>Qual é o seu<br/><em>próximo projeto?</em></h2><p>Conte à BIO SÍNTESE o que você precisa e qual solução deseja conhecer.</p></div><div className="panel"><Mail/><h3>Contato institucional</h3><a className="email" href="mailto:contato@biosintese.com.br">contato@biosintese.com.br</a><label htmlFor="assunto">Sobre o que vamos conversar?</label><select id="assunto" value={subject} onChange={e=>setSubject(e.target.value)}><option>Consultoria integrada</option>{products.map(p=><option key={p.id}>{p.name}</option>)}<option>Parcerias e novos projetos</option></select><a className="button" href={email}>Escrever um e-mail <ArrowUpRight size={18}/></a><small>Abre seu aplicativo de e-mail com o assunto escolhido. Nenhuma mensagem é enviada automaticamente.</small></div></div></section></main>
+ <footer className="wrap"><div><a className="brand" href="#inicio">BIO SÍNTESE</a><small>CONSULTORIA INTEGRADA</small></div><p>© {new Date().getFullYear()} BIO SÍNTESE.<br/>Todos os direitos reservados.</p><a href="mailto:contato@biosintese.com.br">Entre em contato ↗</a></footer></>;
+}
