@@ -50,7 +50,8 @@ export const SYSTEMS: SystemCardProps[] = [
     subtitle: 'systems.tropa.subtitle',
     description: 'systems.tropa.desc',
     icon: Gamepad2,
-    url: 'https://tropadorush.com/'
+    url: 'https://tropadorush.com/',
+    logo: '/assets/tropa-do-rush-logo.png'
   },
   {
     id: 'setor-seis',
