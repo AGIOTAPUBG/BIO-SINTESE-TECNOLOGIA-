@@ -117,7 +117,7 @@ const Home: React.FC = () => {
           {SYSTEMS.slice(0, 4).map((sys) => (
             <div key={sys.id} className="bg-slate-900 border border-slate-800 p-6 rounded-lg hover:bg-slate-800 transition-colors">
               <div className="flex justify-between items-start mb-4">
-                <sys.icon className="h-8 w-8 text-naxxos-orange" />
+                {sys.logo ? <img src={sys.logo} alt={t(sys.title)} className="h-8 w-8 object-contain bg-white rounded-sm" width={32} height={32} loading="lazy" /> : <sys.icon className="h-8 w-8 text-naxxos-orange" />}
                 <span className="text-xs text-slate-500 font-mono">{sys.id.toUpperCase()}</span>
               </div>
               <h4 className="text-xl font-bold text-white mb-2">{t(sys.title)}</h4>

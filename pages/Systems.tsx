@@ -22,7 +22,7 @@ const Systems: React.FC = () => {
             {SYSTEMS.map((system, index) => (
                 <div key={system.id} className={`flex flex-col md:flex-row gap-8 items-start p-8 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-naxxos-red/30 transition-all duration-300 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                     <div className="flex-shrink-0 p-6 bg-naxxos-black rounded-lg border border-slate-800 shadow-lg">
-                        <system.icon className="h-16 w-16 text-naxxos-red" />
+                        {system.logo ? <img src={system.logo} alt={t(system.title)} className="h-20 w-20 object-contain bg-white rounded-sm" width={80} height={80} /> : <system.icon className="h-16 w-16 text-naxxos-red" />}
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">

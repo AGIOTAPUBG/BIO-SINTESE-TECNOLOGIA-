@@ -41,7 +41,8 @@ export const SYSTEMS: SystemCardProps[] = [
     subtitle: 'systems.sigcr.subtitle',
     description: 'systems.sigcr.desc',
     icon: ShieldCheck,
-    url: 'https://sigcr.com.br/'
+    url: 'https://sigcr.com.br/',
+    logo: '/assets/sigcr-logo.jpeg'
   },
   {
     id: 'tropa',
