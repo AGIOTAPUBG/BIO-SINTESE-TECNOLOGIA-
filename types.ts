@@ -18,6 +18,7 @@ export interface SystemCardProps {
   description: string;
   icon: LucideIcon;
   features?: string[];
+  url?: string;
 }
 
 export interface ValueProp {

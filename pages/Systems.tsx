@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../components/Section';
-import Button from '../components/Button';
 import { SYSTEMS } from '../constants';
 import { useTranslation } from 'react-i18next';
 
@@ -28,19 +27,19 @@ const Systems: React.FC = () => {
                     <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
                              <h3 className="text-2xl font-display font-bold text-white">{t(system.title)}</h3>
-                             <span className="px-2 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">v3.0</span>
+                             <span className="px-2 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">{t(system.url ? 'systems.available' : 'systems.coming_soon')}</span>
                         </div>
                         <h4 className="text-naxxos-orange font-medium mb-4">{t(system.subtitle)}</h4>
                         <p className="text-slate-400 leading-relaxed mb-6">
                             {t(system.description)}
                         </p>
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {/* Mock tags based on description context */}
-                            <span className="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Secure API</span>
-                            <span className="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Cloud Native</span>
-                            <span className="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Real-time</span>
-                        </div>
-                        <Button variant="outline" className="text-sm px-4 py-2">{t('systems.request_demo')}</Button>
+                        {system.url ? (
+                          <a href={system.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-all duration-300 rounded-sm border border-naxxos-red/50 text-red-500 hover:bg-naxxos-red/10 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            {t('systems.access_site')}<span className="sr-only"> — {t(system.title)} ({t('systems.new_tab')})</span>
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center px-4 py-2 text-sm text-slate-400 border border-slate-700 rounded-sm">{t('systems.coming_soon')}</span>
+                        )}
                     </div>
                 </div>
             ))}

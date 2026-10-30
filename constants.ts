@@ -36,59 +36,26 @@ export const ECOSYSTEMS: EcosystemCardProps[] = [
 
 export const SYSTEMS: SystemCardProps[] = [
   {
-    id: 'core',
-    title: 'systems.core.title',
-    subtitle: 'systems.core.subtitle',
-    description: 'systems.core.desc',
-    icon: ShieldCheck
+    id: 'sigcr',
+    title: 'systems.sigcr.title',
+    subtitle: 'systems.sigcr.subtitle',
+    description: 'systems.sigcr.desc',
+    icon: ShieldCheck,
+    url: 'https://sigcr.com.br/'
   },
   {
-    id: 'reg',
-    title: 'systems.reg.title',
-    subtitle: 'systems.reg.subtitle',
-    description: 'systems.reg.desc',
-    icon: FileText
+    id: 'tropa',
+    title: 'systems.tropa.title',
+    subtitle: 'systems.tropa.subtitle',
+    description: 'systems.tropa.desc',
+    icon: Gamepad2,
+    url: 'https://tropadorush.com/'
   },
   {
-    id: 'sibavec',
-    title: 'systems.sibavec.title',
-    subtitle: 'systems.sibavec.subtitle',
-    description: 'systems.sibavec.desc',
-    icon: Scale
-  },
-  {
-    id: 'drope',
-    title: 'systems.drope.title',
-    subtitle: 'systems.drope.subtitle',
-    description: 'systems.drope.desc',
-    icon: Search
-  },
-  {
-    id: 'captagov',
-    title: 'systems.captagov.title',
-    subtitle: 'systems.captagov.subtitle',
-    description: 'systems.captagov.desc',
-    icon: Coins
-  },
-  {
-    id: 'govdoc',
-    title: 'systems.govdoc.title',
-    subtitle: 'systems.govdoc.subtitle',
-    description: 'systems.govdoc.desc',
-    icon: FileText
-  },
-  {
-    id: 'game',
-    title: 'systems.game.title',
-    subtitle: 'systems.game.subtitle',
-    description: 'systems.game.desc',
-    icon: Gamepad2
-  },
-  {
-    id: 'custom',
-    title: 'systems.custom.title',
-    subtitle: 'systems.custom.subtitle',
-    description: 'systems.custom.desc',
+    id: 'setor-seis',
+    title: 'systems.setorSeis.title',
+    subtitle: 'systems.setorSeis.subtitle',
+    description: 'systems.setorSeis.desc',
     icon: Code2
   }
 ];

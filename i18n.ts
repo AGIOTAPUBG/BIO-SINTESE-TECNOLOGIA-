@@ -40,6 +40,10 @@ const resources = {
         health: "Digital Health"
       },
       systems: {
+        access_site: "Visit website", available: "Available", coming_soon: "Coming soon", new_tab: "opens in a new tab",
+        sigcr: { title: "SIGCR", subtitle: "Accreditation System", desc: "Technology for accreditation management. Visit the official SIGCR website." },
+        tropa: { title: "TROPA DO RUSH", subtitle: "Give value to your squad", desc: "Visit the official TROPA DO RUSH website." },
+        setorSeis: { title: "SETOR SEIS", subtitle: "A BIO SÍNTESE product", desc: "A product of BIO SÍNTESE Consultoria Integrada. More information coming soon." },
         label: "Our Solutions",
         title: "Proprietary Platforms",
         view_all: "View all systems",
@@ -190,6 +194,10 @@ const resources = {
         health: "Saúde Digital"
       },
       systems: {
+        access_site: "Acessar site", available: "Disponível", coming_soon: "Em breve", new_tab: "abre em nova aba",
+        sigcr: { title: "SIGCR", subtitle: "Sistema de Credenciamento", desc: "Tecnologia para gestão de credenciamentos. Acesse o site oficial do SIGCR." },
+        tropa: { title: "TROPA DO RUSH", subtitle: "Dê valor à sua tropa", desc: "Acesse o site oficial da TROPA DO RUSH." },
+        setorSeis: { title: "SETOR SEIS", subtitle: "Um produto BIO SÍNTESE", desc: "Produto da BIO SÍNTESE Consultoria Integrada. Em breve, mais informações." },
         label: "Nossas Soluções",
         title: "Plataformas Proprietárias",
         view_all: "Ver todos os sistemas",
@@ -340,6 +348,10 @@ const resources = {
         health: "Salud Digital"
       },
       systems: {
+        access_site: "Acceder al sitio", available: "Disponible", coming_soon: "Próximamente", new_tab: "se abre en una pestaña nueva",
+        sigcr: { title: "SIGCR", subtitle: "Sistema de Acreditación", desc: "Tecnología para la gestión de acreditaciones. Visite el sitio oficial de SIGCR." },
+        tropa: { title: "TROPA DO RUSH", subtitle: "Dê valor à sua tropa", desc: "Visite el sitio oficial de TROPA DO RUSH." },
+        setorSeis: { title: "SETOR SEIS", subtitle: "Un producto BIO SÍNTESE", desc: "Producto de BIO SÍNTESE Consultoria Integrada. Próximamente, más información." },
         label: "Nuestras Soluciones",
         title: "Plataformas Propietarias",
         view_all: "Ver todos los sistemas",
