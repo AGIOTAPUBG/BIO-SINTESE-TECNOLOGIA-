@@ -59,7 +59,6 @@ export const SYSTEMS: SystemCardProps[] = [
     subtitle: 'systems.drope.subtitle',
     description: 'systems.drope.desc',
     icon: Search,
-    url: 'https://drope.com.br/'
   },
   {
     id: 'setor-seis',
