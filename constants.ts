@@ -54,6 +54,14 @@ export const SYSTEMS: SystemCardProps[] = [
     logo: '/assets/tropa-do-rush-logo.png'
   },
   {
+    id: 'drope',
+    title: 'systems.drope.title',
+    subtitle: 'systems.drope.subtitle',
+    description: 'systems.drope.desc',
+    icon: Search,
+    url: 'https://drope.com.br/'
+  },
+  {
     id: 'setor-seis',
     title: 'systems.setorSeis.title',
     subtitle: 'systems.setorSeis.subtitle',
