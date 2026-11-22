@@ -41,6 +41,8 @@ const resources = {
       },
       systems: {
         access_site: "Visit website", available: "Available", coming_soon: "Coming soon", new_tab: "opens in a new tab",
+        informeAtas: { title: "INFORME ATAS", subtitle: "Public Procurement", desc: "Search and analyze public procurement price registration records." },
+        capitalEmendas: { title: "CAPITAL EMENDAS", subtitle: "Public Funding", desc: "Track parliamentary amendments and public funding opportunities." },
         sigcr: { title: "SIGCR", subtitle: "Accreditation System", desc: "Technology for accreditation management. Visit the official SIGCR website." },
         tropa: { title: "TROPA DO RUSH", subtitle: "Give value to your squad", desc: "Visit the official TROPA DO RUSH website." },
         drope: { title: "DROPE", subtitle: "Subdomain being set up", desc: "The drope.biosintese.com.br address is being set up. The project demo uses simulated data." },
@@ -196,6 +198,8 @@ const resources = {
       },
       systems: {
         access_site: "Acessar site", available: "Disponível", coming_soon: "Em breve", new_tab: "abre em nova aba",
+        informeAtas: { title: "INFORME ATAS", subtitle: "Compras Públicas", desc: "Busque e analise atas de registro de preços de compras públicas." },
+        capitalEmendas: { title: "CAPITAL EMENDAS", subtitle: "Captação de Recursos", desc: "Acompanhe emendas parlamentares e oportunidades de captação de recursos públicos." },
         sigcr: { title: "SIGCR", subtitle: "Sistema de Credenciamento", desc: "Tecnologia para gestão de credenciamentos. Acesse o site oficial do SIGCR." },
         tropa: { title: "TROPA DO RUSH", subtitle: "Dê valor à sua tropa", desc: "Acesse o site oficial da TROPA DO RUSH." },
         drope: { title: "DROPE", subtitle: "Subdomínio em configuração", desc: "O endereço drope.biosintese.com.br está em configuração. A demonstração do projeto usa dados simulados." },
@@ -351,6 +355,8 @@ const resources = {
       },
       systems: {
         access_site: "Acceder al sitio", available: "Disponible", coming_soon: "Próximamente", new_tab: "se abre en una pestaña nueva",
+        informeAtas: { title: "INFORME ATAS", subtitle: "Compras Públicas", desc: "Busca y analiza actas de registro de precios de compras públicas." },
+        capitalEmendas: { title: "CAPITAL EMENDAS", subtitle: "Captación de Recursos", desc: "Consulta enmiendas parlamentarias y oportunidades de financiación pública." },
         sigcr: { title: "SIGCR", subtitle: "Sistema de Acreditación", desc: "Tecnología para la gestión de acreditaciones. Visite el sitio oficial de SIGCR." },
         tropa: { title: "TROPA DO RUSH", subtitle: "Inteligencia y validación de datos", desc: "Unifica fuentes de datos oficiales y autorizadas para inteligencia y validación, con enfoque en el cumplimiento de la LGPD." },
         drope: { title: "DROPE", subtitle: "Subdominio en configuración", desc: "La dirección drope.biosintese.com.br está en configuración. La demostración del proyecto utiliza datos simulados." },
