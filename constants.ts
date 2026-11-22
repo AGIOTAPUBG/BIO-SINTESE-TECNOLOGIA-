@@ -36,6 +36,22 @@ export const ECOSYSTEMS: EcosystemCardProps[] = [
 
 export const SYSTEMS: SystemCardProps[] = [
   {
+    id: 'informe-atas',
+    title: 'systems.informeAtas.title',
+    subtitle: 'systems.informeAtas.subtitle',
+    description: 'systems.informeAtas.desc',
+    icon: FileText,
+    url: 'https://informeatas.com.br/'
+  },
+  {
+    id: 'capital-emendas',
+    title: 'systems.capitalEmendas.title',
+    subtitle: 'systems.capitalEmendas.subtitle',
+    description: 'systems.capitalEmendas.desc',
+    icon: Coins,
+    url: 'https://capitalemendas.com.br/'
+  },
+  {
     id: 'sigcr',
     title: 'systems.sigcr.title',
     subtitle: 'systems.sigcr.subtitle',

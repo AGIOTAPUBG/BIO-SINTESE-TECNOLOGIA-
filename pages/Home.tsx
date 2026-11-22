@@ -122,7 +122,13 @@ const Home: React.FC = () => {
               </div>
               <h4 className="text-xl font-bold text-white mb-2">{t(sys.title)}</h4>
               <p className="text-slate-400 text-sm mb-4 line-clamp-3">{t(sys.description)}</p>
-              <Link to={getLinkPath('/systems')} className="text-naxxos-red text-sm font-medium hover:underline">{t('systems.learn_more')}</Link>
+              {sys.url ? (
+                <a href={sys.url} target="_blank" rel="noopener noreferrer" className="text-naxxos-red text-sm font-medium hover:underline">
+                  {t('systems.access_site')}<span className="sr-only"> — {t(sys.title)} ({t('systems.new_tab')})</span>
+                </a>
+              ) : (
+                <Link to={getLinkPath('/systems')} className="text-naxxos-red text-sm font-medium hover:underline">{t('systems.learn_more')}</Link>
+              )}
             </div>
           ))}
         </div>
