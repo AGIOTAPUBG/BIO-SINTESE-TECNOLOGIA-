@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { MapPin, Mail, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { MapPin, Mail, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
@@ -65,15 +65,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-naxxos-red mr-3 mt-0.5" />
-                <span className="text-slate-400 text-sm">Tech Park Corporate Center<br/>Brasília, DF - Brazil</span>
+                <span className="text-slate-400 text-sm">Parque Brasília Centro Empresarial<br/>SIG Quadra 1, Lotes 985/1055, SL26<br/>Asa Sul, Brasília – DF, CEP 70610-410</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-naxxos-red mr-3" />
-                <span className="text-slate-400 text-sm">contact@biosintese.tech</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-naxxos-red mr-3" />
-                <span className="text-slate-400 text-sm">+55 (61) 3000-0000</span>
+                <a className="text-slate-400 text-sm hover:underline" href="mailto:contato@biosintese.com.br">contato@biosintese.com.br</a>
               </li>
             </ul>
           </div>
@@ -84,7 +80,7 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} BIO SÍNTESE - TECNOLOGIA. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0">
-             <span className="text-slate-600 text-xs">{t('footer.dev')}</span>
+             <span className="text-slate-600 text-xs">{currentLang === 'en' ? 'Produced by' : currentLang === 'es' ? 'Producido por' : 'Produzido por'} BIO SÍNTESE CIÊNCIA E TECNOLOGIA</span>
           </div>
         </div>
       </div>
